@@ -1,0 +1,32 @@
+// 重写iview
+
+// 重写table自适应
+.ivu-table {
+
+    .ivu-table-header,
+    .ivu-table-body {
+        table {
+            // table-layout: auto !important; 
+            width: 100% !important;
+        }
+    }
+}
+
+// 重写model位置
+.ivu-modal {
+    top: 33% !important;
+}
+
+.login {
+    background-image: url("../iview/image/Login.jpeg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.login-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+}
