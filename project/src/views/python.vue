@@ -7,7 +7,7 @@
           <BreadcrumbItem>python</BreadcrumbItem>
           <BreadcrumbItem>Layout</BreadcrumbItem>
         </Breadcrumb>
-        <Card>
+      
           <Form ref="python" :model="python" :rules="ruleValidate" label-position="top">
             <FormItem prop="input1" label="题目">
               <Input v-model="python.input1" />
@@ -32,7 +32,7 @@
               <Button class @click="pythonDay('python')" type="success">提交</Button>
             </FormItem>
           </Form>
-        </Card>
+        
       </Content>
     </Layout>
   </div>

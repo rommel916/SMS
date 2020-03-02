@@ -8,7 +8,7 @@
           <BreadcrumbItem>Layout</BreadcrumbItem>
         </Breadcrumb>
         <Card>
-          <Form ref="wekWeb" :model="wekWeb" :rules="ruleValidate" label-position="top">
+          <Form  style="z-index:-22" ref="wekWeb" :model="wekWeb" :rules="ruleValidate" label-position="top">
             <FormItem prop="input1" label="题目">
               <Input v-model="wekWeb.input1" />
             </FormItem>

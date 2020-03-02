@@ -7,7 +7,7 @@
           <BreadcrumbItem>php</BreadcrumbItem>
           <BreadcrumbItem>Layout</BreadcrumbItem>
         </Breadcrumb>
-        <Card>
+      
           <Form ref="php" :model="php" :rules="ruleValidate" label-position="top">
             <FormItem prop="input1" label="题目">
               <Input v-model="php.input1" />
@@ -32,7 +32,7 @@
               <Button class @click="phpDay('php')" type="success">提交</Button>
             </FormItem>
           </Form>
-        </Card>
+        
       </Content>
     </Layout>
   </div>
