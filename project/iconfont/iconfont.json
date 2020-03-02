@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "741948",
+      "name": "退出 (4)",
+      "font_class": "tuichu4",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "2030019",
+      "name": "退出",
+      "font_class": "h",
+      "unicode": "e819",
+      "unicode_decimal": 59417
+    },
+    {
+      "icon_id": "5022484",
+      "name": "全屏",
+      "font_class": "quanping",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "5301928",
+      "name": "全屏",
+      "font_class": "quanping1",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "5650911",
+      "name": "全屏",
+      "font_class": "quanping2",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "7500581",
+      "name": "个人中心",
+      "font_class": "icon_personal",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "8939748",
+      "name": "个人中心",
+      "font_class": "gerenzhongxin",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "9559062",
+      "name": "全屏",
+      "font_class": "ziyuan",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    }
+  ]
+}

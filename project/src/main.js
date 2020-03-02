@@ -7,10 +7,12 @@ import ViewUI from 'view-design';
 Vue.use(ViewUI);
 Vue.config.productionTip = false
 
-// 引入quickly.css
+//全局引入quickly.css
 import '../quickly-css/dist/quickly-css.css'
-//引入iview
+//全局引入iview
 import '../iview/iview'
+//全局引入iconfont
+import '../iconfont/iconfont.css'
 
 Vue.use(ViewUI, {
   transfer: true,

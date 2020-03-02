@@ -9,26 +9,35 @@
                         <Icon type="ios-navigate"></Icon>
                         日测
                     </template>
-                    <MenuItem name="/web" to="/web" >web 1</MenuItem>
-                    <MenuItem name="/php" to="/php" >php 2</MenuItem>
-                    <MenuItem name="/python" to="/python" >python 3</MenuItem>
+                    <MenuItem name="/web" to="/web" >web</MenuItem>
+                    <MenuItem name="/php" to="/php" >dphp</MenuItem>
+                    <MenuItem name="/python" to="/python" >python</MenuItem>
                 </Submenu>
                 <Submenu name="2">
                     <template slot="title">
                         <Icon type="ios-keypad"></Icon>
                         周测
                     </template>
-                    <MenuItem name="/weekendWeb" to="/weekendWeb" >web 1</MenuItem>
-                    <MenuItem name="/weekendPhp" to="/weekendPhp" >php 2</MenuItem>
-                    <MenuItem name="/weekendPython" to="/weekendPython" >python 3</MenuItem>
+                    <MenuItem name="/weekendWeb" to="/weekendWeb" >web</MenuItem>
+                    <MenuItem name="/weekendPhp" to="/weekendPhp" >dphp</MenuItem>
+                    <MenuItem name="/weekendPython" to="/weekendPython" >python</MenuItem>
                 </Submenu>
                 <Submenu name="3">
                     <template slot="title">
                         <Icon type="ios-analytics"></Icon>
                         半月测
                     </template>
-                    <MenuItem name="3-1">半月测 1</MenuItem>
-                    <MenuItem name="3-2">半月测 2</MenuItem>
+                  <MenuItem name="/halfMWeb" to="/halfMWeb" >web</MenuItem>
+                    <MenuItem name="/halfMPhp" to="/halfMPhp" >dphp</MenuItem>
+                    <MenuItem name="/halfMPython" to="/halfMPython" >python</MenuItem>
+                </Submenu>
+                 <Submenu name="3">
+                    <template slot="title">
+                        <Icon type="ios-analytics"></Icon>
+                        月测
+                    </template>
+                    <MenuItem name="3-1">月测 1</MenuItem>
+                    <MenuItem name="3-2">月测 2</MenuItem>
                 </Submenu>
             </Menu>
         </Sider>

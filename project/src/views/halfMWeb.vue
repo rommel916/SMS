@@ -8,28 +8,28 @@
           <BreadcrumbItem>Layout</BreadcrumbItem>
         </Breadcrumb>
         <Card>
-          <Form ref="wekWeb" :model="wekWeb" :rules="ruleValidate" label-position="top">
+          <Form ref="hMWeb" :model="hMWeb" :rules="ruleValidate" label-position="top">
             <FormItem prop="input1" label="题目">
-              <Input v-model="wekWeb.input1" />
+              <Input v-model="hMWeb.input1" />
             </FormItem>
             <FormItem prop="input2" label="题目">
-              <Input v-model="wekWeb.input2" />
+              <Input v-model="hMWeb.input2" />
             </FormItem>
             <FormItem prop="input3" label="题目">
-              <Input v-model="wekWeb.input3" />
+              <Input v-model="hMWeb.input3" />
             </FormItem>
 
             <FormItem prop="input4" label="题目">
-              <Input v-model="wekWeb.input4" />
+              <Input v-model="hMWeb.input4" />
             </FormItem>
             <FormItem prop="input5" label="题目">
-              <Input v-model="wekWeb.input5" />
+              <Input v-model="hMWeb.input5" />
             </FormItem>
             <FormItem prop="input6" label="题目">
-              <Input v-model="wekWeb.input6" />
+              <Input v-model="hMWeb.input6" />
             </FormItem>
             <FormItem>
-              <Button class @click="wekWebDay('wekWeb')" type="success">提交</Button>
+              <Button class @click="hMWebDay('hMWeb')" type="success">提交</Button>
             </FormItem>
           </Form>
         </Card>
@@ -41,7 +41,7 @@
 export default {
   data() {
     return {
-      wekWeb: {
+      hMWeb: {
         input1: "",
         input2: "",
         input3: "",
@@ -84,7 +84,7 @@ export default {
     };
   },
   methods: {
-    wekWebDay(name) {
+    hMWebDay(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
           this.$Message.success("添加成功");
