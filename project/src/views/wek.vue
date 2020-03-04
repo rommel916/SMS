@@ -29,7 +29,7 @@
               <Input v-model="python.input6" />
             </FormItem>
             <FormItem>
-              <Button class @click="pythonDay('python')" type="success">提交</Button>
+              <Button class @click="pythonDay('python')" type="success">发布</Button>
             </FormItem>
           </Form>
         

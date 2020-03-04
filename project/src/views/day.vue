@@ -29,7 +29,7 @@
               <Input v-model="php.input6" />
             </FormItem>
             <FormItem>
-              <Button class @click="phpDay('php')" type="success">提交</Button>
+              <Button class @click="phpDay('php')" type="success">发布</Button>
             </FormItem>
           </Form>
         

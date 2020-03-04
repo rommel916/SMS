@@ -18,6 +18,9 @@ import mPhp from '../views/mPhp'
 import mWeb from '../views/mWeb'
 import mPython from '../views/mPython'
 import month from '../views/month'
+import grade from '../views/Grade/grade'
+import tongji from '../views/Grade/tongji'
+import index from '../views/index'
 
 
 
@@ -25,21 +28,7 @@ import month from '../views/month'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    /* {
-      path: '/',
-      component: App,
-      redirect: '/',
-      children: [
-        {
-          path: '/index',
-          component: home,
-          redirect: '/Login',
-          children: Index
-        }
-      ]
-    }, */
-    {
+  routes: [{
       path: '/',
       name: 'home',
       component: home,
@@ -48,14 +37,26 @@ export default new Router({
           name: 'halfMPhp',
           component: halfMPhp
         }, {
+          path: '/',
+          name: 'index',
+          component: index,
+        }, {
           path: 'month', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
           name: 'month',
           component: month
+        }, {
+          path: 'grade', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'grade',
+          component: grade
         },
         {
           path: 'halfMWeb', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
           name: 'halfMWeb',
           component: halfMWeb
+        }, {
+          path: 'tongji', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'tongji',
+          component: tongji
         },
         {
           path: 'halfMPython', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。

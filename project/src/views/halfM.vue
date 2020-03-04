@@ -35,7 +35,7 @@
               <Input v-model="web.input6" />
             </FormItem>
             <FormItem>
-              <Button class @click="webDay('web')" type="success">提交</Button>
+              <Button class @click="webDay('web')" type="success">发布</Button>
             </FormItem>
           </Form>
       </Content>

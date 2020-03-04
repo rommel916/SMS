@@ -16,6 +16,8 @@ import '../quickly-css/dist/quickly-css.css'
 import '../iview/iview'
 //全局引入iconfont
 import '../iconfont/iconfont.css'
+//全局引入css
+import './assets/index.css'
 
 Vue.use(ViewUI, {
   transfer: true,
