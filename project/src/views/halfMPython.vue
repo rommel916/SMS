@@ -9,23 +9,23 @@
         </Breadcrumb>
         <Card>
           <Form ref="hMPython" :model="hMPython" :rules="ruleValidate" label-position="top">
-            <FormItem prop="input1" label="题目">
+            <FormItem prop="input1" label="题目一">
               <Input v-model="hMPython.input1" />
             </FormItem>
-            <FormItem prop="input2" label="题目">
+            <FormItem prop="input2" label="题目一">
               <Input v-model="hMPython.input2" />
             </FormItem>
-            <FormItem prop="input3" label="题目">
+            <FormItem prop="input3" label="题目一">
               <Input v-model="hMPython.input3" />
             </FormItem>
 
-            <FormItem prop="input4" label="题目">
+            <FormItem prop="input4" label="题目一">
               <Input v-model="hMPython.input4" />
             </FormItem>
-            <FormItem prop="input5" label="题目">
+            <FormItem prop="input5" label="题目一">
               <Input v-model="hMPython.input5" />
             </FormItem>
-            <FormItem prop="input6" label="题目">
+            <FormItem prop="input6" label="题目一">
               <Input v-model="hMPython.input6" />
             </FormItem>
             <FormItem>
