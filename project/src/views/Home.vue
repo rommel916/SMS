@@ -11,14 +11,14 @@
           :open-names="['1']"
         >
           <ul class="p-t-10 text-center fs-15">
-            <li style="color:#2d8cf0 " class="l-h-2">组长:李可爱</li>
-            <li style="color:#2d8cf0 " class="l-h-2">管理中心</li>
+            <li style="color:#2d8cf0 " class="l-h-2">姓名:李皮皮</li>
+            <li style="color:#2d8cf0 " class="l-h-2">个人中心</li>
             <li style="color:#2d8cf0 " class="l-h-2">退出</li>
-            <Button type="primary" @click="time">Open notice</Button>
+            <Button type="primary" @click="time">消息中心</Button>
           </ul>
           <Submenu name="1">
             <template slot="title">
-              <Icon type="ios-navigate"></Icon>发布试题
+              <Icon type="ios-navigate"></Icon>测试
             </template>
             <MenuItem name="/day" to="/day">日测</MenuItem>
             <MenuItem name="/wek" to="/wek">周测</MenuItem>
