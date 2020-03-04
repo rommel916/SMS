@@ -9,8 +9,8 @@
       <li class="w-100" style="list-style:none">消息中心</li> -->
       <Content :style="{padding: '0 16px 16px'}">
         <Breadcrumb :style="{margin: '16px 0'}">
-          <BreadcrumbItem>日测</BreadcrumbItem>
-          <BreadcrumbItem>web</BreadcrumbItem>
+          <BreadcrumbItem>发布试题</BreadcrumbItem>
+          <BreadcrumbItem>半月测</BreadcrumbItem>
           <BreadcrumbItem>Layout</BreadcrumbItem>
         </Breadcrumb>
         

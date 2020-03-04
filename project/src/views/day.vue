@@ -3,33 +3,33 @@
     <Layout class="p-t-40" :style="{marginLeft: '200px'}">
       <Content :style="{padding: '0 16px 16px'}">
         <Breadcrumb :style="{margin: '16px 0'}">
+          <BreadcrumbItem>发布试题</BreadcrumbItem>
           <BreadcrumbItem>日测</BreadcrumbItem>
-          <BreadcrumbItem>python</BreadcrumbItem>
           <BreadcrumbItem>Layout</BreadcrumbItem>
         </Breadcrumb>
       
-          <Form ref="python" :model="python" :rules="ruleValidate" label-position="top">
+          <Form ref="php" :model="php" :rules="ruleValidate" label-position="top">
             <FormItem prop="input1" label="题目">
-              <Input v-model="python.input1" />
+              <Input v-model="php.input1" />
             </FormItem>
             <FormItem prop="input2" label="题目">
-              <Input v-model="python.input2" />
+              <Input v-model="php.input2" />
             </FormItem>
             <FormItem prop="input3" label="题目">
-              <Input v-model="python.input3" />
+              <Input v-model="php.input3" />
             </FormItem>
 
             <FormItem prop="input4" label="题目">
-              <Input v-model="python.input4" />
+              <Input v-model="php.input4" />
             </FormItem>
             <FormItem prop="input5" label="题目">
-              <Input v-model="python.input5" />
+              <Input v-model="php.input5" />
             </FormItem>
             <FormItem prop="input6" label="题目">
-              <Input v-model="python.input6" />
+              <Input v-model="php.input6" />
             </FormItem>
             <FormItem>
-              <Button class @click="pythonDay('python')" type="success">提交</Button>
+              <Button class @click="phpDay('php')" type="success">提交</Button>
             </FormItem>
           </Form>
         
@@ -41,7 +41,7 @@
 export default {
   data() {
     return {
-      python: {
+      php: {
         input1: "",
         input2: "",
         input3: "",
@@ -84,7 +84,7 @@ export default {
     };
   },
   methods: {
-    pythonDay(name) {
+    phpDay(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
           this.$Message.success("添加成功");

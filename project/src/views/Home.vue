@@ -11,18 +11,19 @@
           :open-names="['1']"
         >
           <ul class="p-t-10 text-center fs-15">
-            <li style="color:#2d8cf0 " class="l-h-2">姓名:张三美</li>
-            <li style="color:#2d8cf0 " class="l-h-2">个人中心</li>
+            <li style="color:#2d8cf0 " class="l-h-2">组长:李可爱</li>
+            <li style="color:#2d8cf0 " class="l-h-2">管理中心</li>
             <li style="color:#2d8cf0 " class="l-h-2">退出</li>
             <Button type="primary" @click="time">Open notice</Button>
           </ul>
           <Submenu name="1">
             <template slot="title">
-              <Icon type="ios-navigate"></Icon>日测
+              <Icon type="ios-navigate"></Icon>发布试题
             </template>
-            <MenuItem name="/web" to="/web">web</MenuItem>
-            <MenuItem name="/php" to="/php">dphp</MenuItem>
-            <MenuItem name="/python" to="/python">python</MenuItem>
+            <MenuItem name="/day" to="/day">日测</MenuItem>
+            <MenuItem name="/wek" to="/wek">周测</MenuItem>
+            <MenuItem name="/halfM" to="/halfM">半月测</MenuItem>
+            <MenuItem name="/month" to="/month">月测</MenuItem>
           </Submenu>
           <Submenu name="2">
             <template slot="title">

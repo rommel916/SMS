@@ -5,9 +5,9 @@ import Router from 'vue-router'
 import home from '../views/Home.vue'
 // 子路由
 // import Index from "./childRoute"
-import web from '../views/web'
-import php from '../views/php'
-import python from '../views/python'
+import day from '../views/day'
+import wek from '../views/wek'
+import halfM from '../views/halfM'
 import weekendWeb from '../views/weekenWeb'
 import weekendPhp from '../views/weekenPhp'
 import weekendPython from '../views/weekenPython'
@@ -17,6 +17,7 @@ import halfMPhp from '../views/halfMPhp'
 import mPhp from '../views/mPhp'
 import mWeb from '../views/mWeb'
 import mPython from '../views/mPython'
+import month from '../views/month'
 
 
 
@@ -42,11 +43,14 @@ export default new Router({
       path: '/',
       name: 'home',
       component: home,
-      children: [
-        {
+      children: [{
           path: 'halfMPhp', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
           name: 'halfMPhp',
           component: halfMPhp
+        }, {
+          path: 'month', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'month',
+          component: month
         },
         {
           path: 'halfMWeb', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
@@ -58,48 +62,48 @@ export default new Router({
           name: 'halfMPython',
           component: halfMPython
         },
-      {
-        path: 'web', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
-        name: 'web',
-        component: web
-      },
-      {
-        path: 'php', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
-        name: 'php',
-        component: php
-      },
-      {
-        path: 'weekendPython', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
-        name: 'weekendPython',
-        component: weekendPython
-      }, {
-        path: 'weekendWeb', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
-        name: 'weekendWeb',
-        component: weekendWeb
-      },
-      {
-        path: 'weekendPhp', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
-        name: 'weekendPhp',
-        component: weekendPhp
-      },
-      {
-        path: 'python', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
-        name: 'python',
-        component: python
-      },  {
-        path: 'mWeb', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
-        name: 'mWeb',
-        component: mWeb
-      },  {
-        path: 'mPython', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
-        name: 'mPython',
-        component: mPython
-      },  {
-        path: 'mPhp', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
-        name: 'mPhp',
-        component: mPhp
-      },
-    ]
+        {
+          path: 'day', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'day',
+          component: day
+        },
+        {
+          path: 'wek', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'wek',
+          component: wek
+        },
+        {
+          path: 'weekendPython', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'weekendPython',
+          component: weekendPython
+        }, {
+          path: 'weekendWeb', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'weekendWeb',
+          component: weekendWeb
+        },
+        {
+          path: 'weekendPhp', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'weekendPhp',
+          component: weekendPhp
+        },
+        {
+          path: 'halfM', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'halfM',
+          component: halfM
+        }, {
+          path: 'mWeb', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'mWeb',
+          component: mWeb
+        }, {
+          path: 'mPython', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'mPython',
+          component: mPython
+        }, {
+          path: 'mPhp', //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'mPhp',
+          component: mPhp
+        },
+      ]
     },
     {
       path: '/about',
