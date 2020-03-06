@@ -32,7 +32,7 @@
           <BreadcrumbItem>快速处理</BreadcrumbItem>
         </Breadcrumb>
         <Form class="m-t-20">
-          <div class="h-90 pull-left m-12 bg-white min-w-300 w-300">
+          <div  id="indexShadow" class="h-90 pull-left m-12 bg-white min-w-300 w-300">
             <div class="w-300 m-auto">
               <Icon type="ios-paper" class="m-15 fs-60 pull-left text-center" />
               <div class="pull-left m-5 w-200 h-80">
@@ -46,8 +46,8 @@
             </div>
           </div>
 
-          <div class="h-90 pull-left m-12 bg-white min-w-300 w-300">
-            <div class="w-300 m-auto">
+          <div id="indexShadow" class="h-90 pull-left m-12 bg-white min-w-300 w-300">
+            <div class="w-300 m-auto" >
               <Icon type="ios-paper" class="m-15 fs-60 pull-left text-center" />
               <div class="pull-left m-5 w-200 h-80">
                 <ul class="link-grey">
@@ -59,7 +59,7 @@
               </div>
             </div>
           </div>
-          <div class="h-90 pull-left m-12 bg-white min-w-300 w-300">
+          <div  id="indexShadow" class="h-90 pull-left m-12 bg-white min-w-300 w-300">
             <div class="w-300 m-auto">
               <Icon type="ios-paper" class="m-15 fs-60 pull-left text-center" />
               <div class="pull-left m-5 w-200 h-80">
@@ -72,7 +72,7 @@
               </div>
             </div>
           </div>
-          <div class="h-90 pull-left m-12 bg-white min-w-300 w-300">
+          <div  id="indexShadow" class="h-90 pull-left m-12 bg-white min-w-300 w-300">
             <div class="w-300 m-auto">
               <Icon type="ios-paper" class="m-15 fs-60 pull-left text-center" />
               <div class="pull-left m-5 w-200 h-80">
@@ -81,6 +81,19 @@
                     <li  class="bold m-t-15 fs-15">成绩统计</li>
                   </router-link>
                   <li class="fs-13 m-t-5">成绩成绩统计统计,好好好</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+           <div  id="indexShadow" class="h-90 pull-left m-12 bg-white min-w-300 w-300">
+            <div class="w-300 m-auto">
+              <Icon type="ios-paper" class="m-15 fs-60 pull-left text-center" />
+              <div class="pull-left m-5 w-200 h-80">
+                <ul class="link-grey">
+                   <router-link  to="/tongji" >
+                    <li  class="bold m-t-15 fs-15">成绩图标</li>
+                  </router-link>
+                  <li class="fs-13 m-t-5">成绩图标成绩图标,好好好</li>
                 </ul>
               </div>
             </div>

@@ -9,11 +9,12 @@ li {
 
 #linkMessage {
     color: white;
-    position: relative;;
+    position: relative;
+    ;
 }
 
 #linkMessage:hover>#homeMessage {
-    width:500px;
+    width: 500px;
     z-index: 999999
 }
 
@@ -21,27 +22,35 @@ li {
     color: blue;
     text-decoration: none;
 }
-#grade:hover{
-    transform:translateY(-7px);
+
+#grade:hover {
+    transform: translateY(-7px);
     box-shadow: 0 0 .25rem rgba(95, 95, 95, .48);
     transition: .3s;
-    box-shadow: 1rem 1rem 25rem rgba(95, 95, 95, .48);
 }
+
+#indexShadow:hover,
+#grade:hover {
+    box-shadow: 1rem 1rem 25rem rgba(95, 95, 95, .48);
+
+}
+
 #homeMessage {
     width: 200px;
     position: absolute;
     left: 0;
-    top:32px;
+    top: 32px;
     display: block;
     z-index: 999;
-    animation:homeMessage .7s ;
+    animation: homeMessage .7s;
 }
-@keyframes homeMessage {
-    from{
-        transform:translateX(-200px)
-    }
-    to{
-        transform:translateX(0px)
 
+@keyframes homeMessage {
+    from {
+        transform: translateX(-200px)
+    }
+
+    to {
+        transform: translateX(0px)
     }
 }
