@@ -28,28 +28,29 @@
             <MenuItem name="/weekendPhp" to="/weekendPhp">dphp</MenuItem>
             <MenuItem name="/weekendPython" to="/weekendPython">python</MenuItem>
           </Submenu>
-          <Submenu name="3">
+        <!--   <Submenu name="3">
             <template slot="title">
               <Icon type="ios-analytics"></Icon>半月测
             </template>
             <MenuItem name="/halfMWeb" to="/halfMWeb">web</MenuItem>
             <MenuItem name="/halfMPhp" to="/halfMPhp">dphp</MenuItem>
             <MenuItem name="/halfMPython" to="/halfMPython">python</MenuItem>
-          </Submenu>
-          <Submenu name="4">
+          </Submenu> -->
+         <!--  <Submenu name="4">
             <template slot="title">
               <Icon type="ios-analytics"></Icon>月测
             </template>
             <MenuItem name="mWeb" to="mWeb">Web</MenuItem>
             <MenuItem name="mPhp" to="mPhp">Php</MenuItem>
             <MenuItem name="mPython" to="mPython">Python</MenuItem>
-          </Submenu>
+          </Submenu> -->
           <Submenu name="5">
             <template slot="title">
               <Icon type="ios-analytics"></Icon>成绩检测
             </template>
             <MenuItem name="grade" to="grade">批改作业</MenuItem>
             <MenuItem name="tongji" to="tongji">成绩统计</MenuItem>
+            <MenuItem name="answer" to="answer">发布答案</MenuItem>
           </Submenu>
         </Menu>
       </Sider>
