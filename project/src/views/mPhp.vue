@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Layout class="bg-blue p-t-40" :style="{marginLeft: '200px'}">
+    <Layout class=" p-t-40" :style="{marginLeft: '200px'}">
       <Content :style="{padding: '0 16px 16px'}">
         <Breadcrumb :style="{margin: '16px 0'}">
           <BreadcrumbItem>月测</BreadcrumbItem>

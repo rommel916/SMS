@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Layout class="bg-blue" :style="{marginLeft: '200px'}">
+    <Layout class="" :style="{marginLeft: '200px'}">
       <Menu mode="horizontal" :theme="theme1" active-name="1">
         <Submenu name="1">
           <template slot="title">
@@ -90,7 +90,7 @@
               <Icon type="ios-paper" class="m-15 fs-60 pull-left text-center" />
               <div class="pull-left m-5 w-200 h-80">
                 <ul class="link-grey">
-                   <router-link  to="/tongji" >
+                   <router-link  to="/gradeChart" >
                     <li  class="bold m-t-15 fs-15">成绩图标</li>
                   </router-link>
                   <li class="fs-13 m-t-5">成绩图标成绩图标,好好好</li>
