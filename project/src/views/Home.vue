@@ -10,56 +10,7 @@
           width="auto"
           :open-names="['1']"
         >
-          <ul class="p-t-10 text-center fs-15">
-            <List header footer="Footer" size="small">
-              <ListItem style="color:#2d8cf0 " class="w-200 text-center">组长:李可爱 {{ wpy }}</ListItem>
-              <ListItem style="color:#2d8cf0 ">
-                <ul>
-                  <li class="pull-left">管理中心</li>
-                  <li class="pull-left m-l-15">退出</li>
-                </ul>
-              </ListItem>
-              <ListItem style="color:#2d8cf0 ">
-                <li class="text-center w-150 link-blue" id="linkMessage">
-                  消息列表
-                  <div class="bg-blue" id="homeMessage">
-                    <li>
-                      <ul class="w-200 bg-red p-5">
-                        <li class="fs-15">
-                          <Icon type="ios-paper" class=" fs-20 pull-left" />消息头部消息头部
-                        </li>
-                        <li class="fs-13">消息内容消息内容</li>
-                      </ul>
-                       <ul class="w-200 bg-red p-5">
-                        <li class="fs-15">
-                          <Icon type="ios-paper" class=" fs-20 pull-left" />消息头部消息头部
-                        </li>
-                        <li class="fs-13">消息内容</li>
-                      </ul>
-                       <ul class="w-200 bg-red p-5">
-                        <li class="fs-15">
-                          <Icon type="ios-paper" class=" fs-20 pull-left" />消息头部消息头部
-                        </li>
-                        <li class="fs-13">消息内容</li>
-                      </ul>
-                       <ul class="w-200 bg-red p-5">
-                        <li class="fs-15">
-                          <Icon type="ios-paper" class=" fs-20 pull-left" />消息头部消息头部
-                        </li>
-                        <li class="fs-13">消息内容</li>
-                      </ul>
-                       <ul class="w-200 bg-red p-5">
-                        <li class="fs-15">
-                          <Icon type="ios-paper" class=" fs-20 pull-left" />消息头部消息头部
-                        </li>
-                        <li class="fs-13">消息内容</li>
-                      </ul>
-                    </li>
-                  </div>
-                </li>
-              </ListItem>
-            </List>
-          </ul>
+        <user-header></user-header>
           <Submenu name="1">
             <template slot="title">
               <Icon type="ios-navigate"></Icon>发布试题
@@ -107,15 +58,16 @@
   </div>
 </template>
 <script>
-// import cheader from "./Header";
+import userHeader from "./userHeader/userHeader";
 export default {
   data() {
     return {
-      wpy: "web"
+     
+      
     };
   },
   components: {
-    // cheader
+    userHeader
   },
   methods: {
     time() {
@@ -125,7 +77,8 @@ export default {
           "This notification does not automatically close, and you need to click the close button to close.",
         duration: 0
       });
-    }
+    },
+
   }
 };
 </script>

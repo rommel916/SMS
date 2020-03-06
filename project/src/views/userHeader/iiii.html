@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #sign {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #ccc2c2;
+        }
+
+        #tip {
+            width: 150px;
+            height: 70px;
+            border: 1px solid orange;
+            color: rgb(161, 59, 48);
+            display: none;
+            opacity: 1;
+        }
+    </style>
+    <span id="sign"></span>
+    <span>自动登录</span>
+    <div id="tip">为了您的安全请不要在网吧等公共场所使用！</div>
+    <script>
+        var osign = document.getElementById("sign");
+        var tip = document.getElementById("tip");
+        var timer;
+        var oo = 1;
+        //鼠标移入时显示提示信息（让提示框的隐藏效果消失）
+        osign.onmouseover = function () {
+            //清除延时器以免出现闪烁
+            clearInterval(timer);
+            tip.style.display = "block";
+            tip.style.opacity = 1;
+        }
+
+        //鼠标离开,信息消失，隐藏效果延迟
+        osign.onmouseout = function () {
+            clearInterval(timer);
+            tip.style.display = "block";
+            //最后复原透明度，成为下次的开始值
+        }
+        tip.onmouseout = function () {
+            tip.style.display = "none";
+
+        }
+    </script>
+
+</html>
