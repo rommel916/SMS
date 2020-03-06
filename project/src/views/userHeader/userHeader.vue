@@ -1,5 +1,5 @@
 <template>
-  <ul class="p-t-10 text-center fs-15">
+  <ul class=" text-center fs-15">
     <List header footer="Footer" size="small">
       <ListItem style="color:#2d8cf0 " class="w-200">组长:李可爱 {{ wpy }}</ListItem>
       <ListItem style="color:#2d8cf0 ">
@@ -18,7 +18,7 @@
             @mouseenter="sover"
             @mouseleave="sout"
           >
-            <li class="p-t-15 p-b-15 h-300">
+            <li class=" p-b-15 h-300">
               <ul class="w-200  bg-blue  p-5" v-for="(item,index) in message" :key="index">
                 <Icon type="ios-paper" class="fs-20 pull-left" />
                 <li class="fs-15 pull-left text-title">{{item.title}}</li>
