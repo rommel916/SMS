@@ -11,11 +11,11 @@ Vue.use(Axios);
 Vue.config.productionTip = false
 
 //全局引入quickly.css
-import '../quickly-css/dist/quickly-css.css'
+import './quickly-css/dist/quickly-css.css'
 //全局引入iview
-import '../iview/iview'
+import './iview/iview'
 //全局引入iconfont
-import '../iconfont/iconfont.css'
+import './iconfont/iconfont.css'
 //全局引入css
 import './assets/index.css'
 

@@ -19,6 +19,7 @@
             <MenuItem name="/wek" to="/wek">周测</MenuItem>
             <MenuItem name="/halfM" to="/halfM">半月测</MenuItem>
             <MenuItem name="/month" to="/month">月测</MenuItem>
+            <MenuItem name="/management" to="/management">试题管理</MenuItem>
           </Submenu>
           <Submenu name="2">
             <template slot="title">

@@ -5,9 +5,17 @@ import Router from 'vue-router'
 import home from '../views/Home.vue'
 // 子路由
 // import Index from "./childRoute"
-import day from '../views/day'
-import wek from '../views/wek'
-import halfM from '../views/halfM'
+import day from '../views/release/day'
+import wek from '../views/release/wek'
+
+
+import management from '../views/release/management'
+import manageDay  from '../views/release/manage/allManage'
+import manageWek  from '../views/release/manage/manageWek'
+import manageHMonth  from '../views/release/manage/manageHMonth'
+import manageMonth  from '../views/release/manage/manageMonth'
+
+import halfM from '../views/release/halfM'
 import weekendWeb from '../views/weekenWeb'
 import weekendPhp from '../views/weekenPhp'
 import weekendPython from '../views/weekenPython'
@@ -17,11 +25,15 @@ import halfMPhp from '../views/halfMPhp'
 import mPhp from '../views/mPhp'
 import mWeb from '../views/mWeb'
 import mPython from '../views/mPython'
-import month from '../views/month'
+import month from '../views/release/month'
+
+
 import grade from '../views/Grade/grade'
+import member from '../views/Grade/members/memberGrade'
+
+
 import tongji from '../views/Grade/tongji'
 import index from '../views/index'
-import member from '../views/Grade/members/memberGrade'
 import gradeChart from '../views/Grade/gradeChart'
 import answer from '../views/Grade/answer'
 
@@ -44,10 +56,30 @@ export default new Router({
           name: 'index',
           component: index,
         },{
+          path: 'management',
+          name: 'management',
+          component: management,
+        }, {
+          path: 'manageDay',
+          name: 'manageDay',
+          component: manageDay,
+        },{
+          path: 'manageWek',
+          name: 'manageWek',
+          component: manageWek,
+        },  {
+          path: 'manageHMonth',
+          name: 'manageHMonth',
+          component: manageHMonth,
+        }, {
+          path: 'manageMonth',
+          name: 'manageMonth',
+          component: manageMonth,
+        },  {
           path: 'gradeChart',
           name: 'gradeChart',
           component: gradeChart,
-        }, {
+        },{
           path: 'grade/member/:user',
           name: 'member',
           component: member,

@@ -1,5 +1,5 @@
 <template>
-  <ul class=" text-center fs-15">
+  <!-- <ul class=" text-center fs-15">
     <List header footer="Footer" size="small">
       <ListItem style="color:#2d8cf0 " class="w-200">组长:李可爱 {{ wpy }}</ListItem>
       <ListItem style="color:#2d8cf0 ">
@@ -30,18 +30,33 @@
         </li>
       </ListItem>
     </List>
-  </ul>
+  </ul>-->
+  <div>
+    <Button @click="value2 = true" type="primary" class="w-200">个人中心</Button>
+    <Drawer class="w-200" title="个人中心" placement="left" :closable="false" v-model="value2">
+      <p>名字:石潇文</p>
+      <div class="b-b m-b-5" v-for="(item,index) in message" :key="index">
+        <dl>
+          <dt class="link-titlea">{{ item.title }}</dt>
+          <dd class="m-l-15">{{ item.content }}</dd>
+          <dd class="link-blue">{{ item.message_time }}</dd>
+        </dl>
+      </div>
+    </Drawer>
+  </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      wpy: "web",
-      display: false,
+      value2: false,
+      /*  wpy: "web",
+      display: false,*/
       message: [
         {
+          type: "ios-arrow-dropdown-circle",
           title: "消息",
-          content: "消息列表消息列息列表消息列表消息列表消息",
+          content:"消息列表消息列表消息列表消息列表消息列表消息列表",
           message_time: "2020 1.9 11:00"
         },
         {
@@ -83,7 +98,7 @@ export default {
     };
   },
   methods: {
-    enter() {
+    /*  enter() {
       let self = this;
       self.timer = setTimeout(() => {
         self.display = true;
@@ -97,7 +112,7 @@ export default {
     sout() {
       let self = this;
       self.display = false;
-    }
+    } */
   }
 };
 </script>

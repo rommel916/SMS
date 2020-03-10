@@ -32,7 +32,6 @@ li {
 #indexShadow:hover,
 #grade:hover {
     box-shadow: 1rem 1rem 25rem rgba(95, 95, 95, .48);
-
 }
 
 #homeMessage {
@@ -40,7 +39,10 @@ li {
     position: absolute;
     left: 0;
     top: 32px;
+    overflow-x: hidden;
+    overflow-y: scroll;
     display: block;
+    box-shadow: 3rem 3rem 25rem rgba(95, 95, 95, .48);
     z-index: 999;
     animation: homeMessage .7s;
 }
