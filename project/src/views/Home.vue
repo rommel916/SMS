@@ -54,11 +54,10 @@
             <MenuItem name="answer" to="answer">发布答案</MenuItem>
           </Submenu>
         </Menu>
+       
       </Sider>
+
       <router-view></router-view>
-    </div>
-    <div class="absolute bottom-10 w-full flex j-center a-center">
-      <a class="fs-12 text-grey" href="http://www.beian.miit.gov.cn">ICP证：豫ICP备18034461号</a>
     </div>
   </div>
 </template>
