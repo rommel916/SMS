@@ -34,7 +34,7 @@
   <div>
     <Button @click="value2 = true" type="primary" class="w-200">个人中心</Button>
     <Drawer class="w-200" title="个人中心" placement="left" :closable="false" v-model="value2">
-      <p>名字:石潇文</p>
+      <p class="">名字:石潇文</p>
       <div class="b-b m-b-5" v-for="(item,index) in message" :key="index">
         <dl>
           <dt class="link-titlea">{{ item.title }}</dt>

@@ -10,7 +10,7 @@
           width="auto"
           :open-names="['1']"
         >
-        <user-header></user-header>
+          <user-header></user-header>
           <Submenu name="1">
             <template slot="title">
               <Icon type="ios-navigate"></Icon>发布试题
@@ -29,22 +29,22 @@
             <MenuItem name="/weekendPhp" to="/weekendPhp">dphp</MenuItem>
             <MenuItem name="/weekendPython" to="/weekendPython">python</MenuItem>
           </Submenu>
-        <!--   <Submenu name="3">
+          <!--   <Submenu name="3">
             <template slot="title">
               <Icon type="ios-analytics"></Icon>半月测
             </template>
             <MenuItem name="/halfMWeb" to="/halfMWeb">web</MenuItem>
             <MenuItem name="/halfMPhp" to="/halfMPhp">dphp</MenuItem>
             <MenuItem name="/halfMPython" to="/halfMPython">python</MenuItem>
-          </Submenu> -->
-         <!--  <Submenu name="4">
+          </Submenu>-->
+          <!--  <Submenu name="4">
             <template slot="title">
               <Icon type="ios-analytics"></Icon>月测
             </template>
             <MenuItem name="mWeb" to="mWeb">Web</MenuItem>
             <MenuItem name="mPhp" to="mPhp">Php</MenuItem>
             <MenuItem name="mPython" to="mPython">Python</MenuItem>
-          </Submenu> -->
+          </Submenu>-->
           <Submenu name="5">
             <template slot="title">
               <Icon type="ios-analytics"></Icon>成绩检测
@@ -57,16 +57,16 @@
       </Sider>
       <router-view></router-view>
     </div>
+    <div class="absolute bottom-10 w-full flex j-center a-center">
+      <a class="fs-12 text-grey" href="http://www.beian.miit.gov.cn">ICP证：豫ICP备18034461号</a>
+    </div>
   </div>
 </template>
 <script>
 import userHeader from "./userHeader/userHeader";
 export default {
   data() {
-    return {
-     
-      
-    };
+    return {};
   },
   components: {
     userHeader
@@ -79,8 +79,7 @@ export default {
           "This notification does not automatically close, and you need to click the close button to close.",
         duration: 0
       });
-    },
-
+    }
   }
 };
 </script>
