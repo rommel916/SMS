@@ -8,6 +8,7 @@
           :active-name="$route.path"
           theme="dark"
           width="auto"
+          accordion="false"
           :open-names="['1']"
         >
           <user-header></user-header>

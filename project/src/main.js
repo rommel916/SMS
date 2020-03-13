@@ -5,6 +5,9 @@ import store from './store'
 import Axios from './axios'
 import ViewUI from 'view-design';
 import axios from 'axios'
+import echarts from 'echarts'// 引入echarts图表
+
+Vue.prototype.$echarts = echarts
 
 Vue.use(ViewUI);
 Vue.use(Axios);
