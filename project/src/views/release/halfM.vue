@@ -7,50 +7,60 @@
           <BreadcrumbItem>半月测</BreadcrumbItem>
           <BreadcrumbItem>Layout</BreadcrumbItem>
         </Breadcrumb>
-
-        <Form ref="php" :model="php" :rules="ruleValidate" label-position="top">
-          <FormItem prop="input1" label="题目">
-            <Input v-model="php.input1" />
-          </FormItem>
-          <FormItem prop="input2" label="题目">
-            <Input v-model="php.input2" />
-          </FormItem>
-          <FormItem prop="input3" label="题目">
-            <Input v-model="php.input3" />
-          </FormItem>
-
-          <FormItem prop="input4" label="题目">
-            <Input v-model="php.input4" />
-          </FormItem>
-          <FormItem prop="input5" label="题目">
-            <Input v-model="php.input5" />
-          </FormItem>
-          <FormItem prop="input6" label="题目">
-            <Input v-model="php.input6" />
-          </FormItem>
-          <FormItem>
-            <Button class="pull-left" @click="save('php')" type="info">保存</Button>
-            <!-- <Button @click="modal7 = true">Disable upper right corner (including Esc key)</Button> -->
-
-            <Button class="pull-left m-l-20" @click="modal7 = true" type="success">提交</Button>
-            <Modal title="选择要发送的对象" v-model="modal7" :closable="false">
-              <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
-                <Checkbox
-                  :indeterminate="indeterminate"
-                  :value="checkAll"
-                  @click.prevent.native="handleCheckAll"
-                >全选</Checkbox>
-              </div>
-              <CheckboxGroup v-model="checkAllGroup" @on-change="checkAllGroupChange">
-                <Checkbox label="张三"></Checkbox>
-                <Checkbox label="李四"></Checkbox>
-                <Checkbox label="赵苏"></Checkbox>
-                <Checkbox label="李章"></Checkbox>
-              </CheckboxGroup>
-            </Modal>
-            <Button class="pull-left m-l-20" @click="cancel('php')" type="error">取消</Button>
-          </FormItem>
-        </Form>
+        <Card>
+          <Form ref="php" :model="php" :rules="ruleValidate" label-position="top">
+            <FormItem prop="input1" label="题目">
+              <Input ref="dayInput" id="dayInput" v-model="php.input2" />
+            </FormItem>
+            <FormItem prop="input1" label="题目">
+              <Input ref="dayInput" id="dayInput" v-model="php.input3" />
+            </FormItem>
+            <div v-for="(d,index) in dayContent" :key="index">
+              <FormItem prop="input1" label="题目">
+                <Input ref="dayInput" id="dayInput" />
+              </FormItem>
+            </div>
+            {{ php.input1 }}
+            <Icon type="md-flash" @click="dayInputAdd" class="fs-25 cursor-pointer" />
+            <FormItem>
+              <Button class="pull-left" @click="save('php')" type="info">保存</Button>
+              <Button class="pull-left m-l-20" @click="modal7 = true" type="success">提交</Button>
+              <Modal
+                @on-ok="dayok"
+                @on-cancel="dayCancel"
+                title="确认提交提示框"
+                v-model="modal7"
+                :closable="false"
+              >
+                <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
+                  <div class="text-blue flex text-center">
+                    <div class="flex-1">测试的名字:{{ dayName }}</div>
+                    <div class="flex-1 b-h">发布试题的名字:{{ userName }}</div>
+                    <div class="flex-1">{{dateTime}}</div>
+                  </div>
+                </div>
+                <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
+                  <Checkbox
+                    :indeterminate="indeterminate"
+                    :value="checkAll"
+                    @click.prevent.native="handleCheckAll"
+                  >全选</Checkbox>
+                </div>
+                <CheckboxGroup v-model="checkAllGroup" @on-change="checkAllGroupChange">
+                  <Checkbox label="张三"></Checkbox>
+                  <Checkbox label="李四"></Checkbox>
+                  <Checkbox label="赵苏"></Checkbox>
+                  <Checkbox label="李章"></Checkbox>
+                </CheckboxGroup>
+                <!--    <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
+                <Button type="primary">取消</Button>
+                <Button type="primary">确认发布</Button>
+                </div>-->
+              </Modal>
+              <Button class="pull-left m-l-20" @click="cancel('php')" type="error">取消</Button>
+            </FormItem>
+          </Form>
+        </Card>
       </Content>
     </Layout>
   </div>
@@ -59,26 +69,30 @@
 export default {
   data() {
     return {
+      dayContent: [],
+      dayName: "日测一",
+      userName: "石潇文",
+      dateTime: "",
       modal7: false,
       indeterminate: true,
       checkAll: false,
-      // checkAllGroup: ["张三", "李四","赵肃"],
-      user: [{ name: "张三" },{ name: "李四" },{ name: "张三" }],
+      checkAllGroup: ["张三", "李四", "赵苏", "李章"],
+      user: [{ name: "张三" }, { name: "李四" }, { name: "张三" }],
       php: {
-        input1: "",
-        input2: "",
+        input1: ""
+        /*   input2: "",
         input3: "",
         input4: "",
         input5: "",
-        input6: ""
+        input6: "" */
       },
       ruleValidate: {
         input1: [
           {
             trigger: "blur"
           }
-        ],
-        input2: [
+        ]
+        /* input2: [
           {
             trigger: "blur"
           }
@@ -101,12 +115,22 @@ export default {
         input6: [
           {
             trigger: "blur"
-          }
-        ]
+          } 
+        ]*/
       }
     };
   },
   methods: {
+    dayInputAdd() {
+      // alert("addInputAdd")
+      this.dayContent.push({});
+    },
+    dayok() {
+      this.$Message.info("提交成功");
+    },
+    dayCancel() {
+      this.$Message.info("确认取消");
+    },
     handleCheckAll() {
       if (this.indeterminate) {
         this.checkAll = false;
@@ -116,13 +140,13 @@ export default {
       this.indeterminate = false;
 
       if (this.checkAll) {
-          this.checkAllGroup = ["张三", "李四","赵苏","李章"];
+        this.checkAllGroup = ["张三", "李四", "赵苏", "李章"];
       } else {
         this.checkAllGroup = [];
       }
     },
     checkAllGroupChange(data) {
-      if (data.length === 3) {
+      if (data.length === 4) {
         this.indeterminate = false;
         this.checkAll = true;
       } else if (data.length > 0) {
@@ -133,26 +157,13 @@ export default {
         this.checkAll = false;
       }
     },
-    /*      this.$refs[name].validate(valid => {
-        if (valid) {
-          this.$Message.success("提交成功");
-        } else {
-          this.$Message.error("提交失败");
-        }
-      }); */
-    /*  checkAllGroupChange(data) {
-      if (data.length === 3) {
-        this.indeterminate = false;
-        this.checkAll = true;
-      } else if (data.length > 0) {
-        this.indeterminate = true;
-        this.checkAll = false;
-      } else {
-        this.indeterminate = false;
-        this.checkAll = false;
-      }
-    }, */
     save(name) {
+      let data = new Date();
+      let datata = data
+        .toString()
+        .split("06")[1]
+        .split("GMT")[0];
+      this.dateTime = datata;
       this.$refs[name].validate(valid => {
         if (valid) {
           this.$Message.success("保存成功");
