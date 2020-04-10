@@ -3,15 +3,14 @@
     <!-- <cheader /> -->
     <div class="layout">
       <Sider :style="{position: 'fixed', height: '100vh', left: 0, overflow: 'auto'}">
+        <user-header></user-header>
         <Menu
-          class="m-t-40 o-hidden"
+          class="o-hidden"
           :active-name="$route.path"
           theme="dark"
           width="auto"
-          accordion="false"
           :open-names="['1']"
         >
-          <user-header></user-header>
           <Submenu name="1">
             <template slot="title">
               <Icon type="ios-navigate"></Icon>发布试题
@@ -24,28 +23,12 @@
           </Submenu>
           <Submenu name="2">
             <template slot="title">
-              <Icon type="ios-keypad"></Icon>周测
+              <Icon type="ios-keypad"></Icon>测试
             </template>
             <MenuItem name="/weekendWeb" to="/weekendWeb">web</MenuItem>
             <MenuItem name="/weekendPhp" to="/weekendPhp">dphp</MenuItem>
             <MenuItem name="/weekendPython" to="/weekendPython">python</MenuItem>
           </Submenu>
-          <!--   <Submenu name="3">
-            <template slot="title">
-              <Icon type="ios-analytics"></Icon>半月测
-            </template>
-            <MenuItem name="/halfMWeb" to="/halfMWeb">web</MenuItem>
-            <MenuItem name="/halfMPhp" to="/halfMPhp">dphp</MenuItem>
-            <MenuItem name="/halfMPython" to="/halfMPython">python</MenuItem>
-          </Submenu>-->
-          <!--  <Submenu name="4">
-            <template slot="title">
-              <Icon type="ios-analytics"></Icon>月测
-            </template>
-            <MenuItem name="mWeb" to="mWeb">Web</MenuItem>
-            <MenuItem name="mPhp" to="mPhp">Php</MenuItem>
-            <MenuItem name="mPython" to="mPython">Python</MenuItem>
-          </Submenu>-->
           <Submenu name="5">
             <template slot="title">
               <Icon type="ios-analytics"></Icon>成绩检测
@@ -55,7 +38,6 @@
             <MenuItem name="answer" to="answer">发布答案</MenuItem>
           </Submenu>
         </Menu>
-       
       </Sider>
 
       <router-view></router-view>

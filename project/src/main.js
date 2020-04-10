@@ -21,6 +21,7 @@ import './iview/iview'
 import './iconfont/iconfont.css'
 //全局引入css
 import './assets/index.css'
+// 全局引入全灰
 
 Vue.use(ViewUI, {
   transfer: true,

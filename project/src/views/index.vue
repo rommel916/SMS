@@ -1,7 +1,7 @@
 <template>
   <div>
     <Layout class :style="{marginLeft: '200px'}">
-      <Menu mode="horizontal" :theme="theme1" active-name="1">
+      <Menu class="w-800" mode="horizontal" :theme="theme1" active-name="1">
         <Submenu name="1">
           <template slot="title">
             <Icon type="ios-paper" />发布试题
