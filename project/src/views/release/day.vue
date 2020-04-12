@@ -12,49 +12,30 @@
             <FormItem class>
               <input class ref="textName" id="dayInputOutline" placeholder="本次测验的题目" />
             </FormItem>
-            <FormItem prop="input1" label>
-              <p>题目</p>
-              <Input
-                style="width:70%"
-                class="m-r-20"
-                ref="dayInput"
-                id="dayInput"
-                v-model="php.input2"
-              />
-              <!-- <Button @click="dayAnswer" type="info">{{dayButton}}</Button> -->
-              <Radio label="apple">
-                <Icon type="social-apple"></Icon>
-                <span>不填答案按钮</span>
-              </Radio>
-            </FormItem>
-            <FormItem prop="input1" label>
-              <p ref="inout1">题目</p>
-              <Input
-                style="width:70%"
-                class="m-r-20"
-                ref="dayInput"
-                id="dayInput"
-                v-model="php.input3"
-              />
-              <!-- <Button @click="dayAnswer" type="info">{{dayButton}}</Button> -->
-              <Radio label="apple">
-                <Icon type="social-apple"></Icon>
-                <span>不填答案按钮</span>
-              </Radio>
-            </FormItem>
-            <div v-for="(d,index) in dayContent" :key="index">
-              <p ref="dayAddInputNumber">题目</p>
+            <div ref="dayRef" v-for="(d,index) in dayContent" :key="index">
+              <p ref="dayAddInputNumber">{{d.day_input_name}}</p>
+              <!-- <p ref="dayAddInputNumber">{{d.day_input_name}}</p> -->
               <FormItem prop="input1" label>
-                <Input style="width:70%" class="m-r-20" ref="dayInput" id="dayInput" />
+                <Input
+                  v-model="d.input"
+                  style="width:70%"
+                  class="m-r-20"
+                  ref="dayInput"
+                  id="dayInput"
+                />
                 <!-- <Button @click="dayAnswer" type="info">{{dayButton}}</Button> -->
                 <Radio label="apple">
                   <Icon type="social-apple"></Icon>
-                  <span>不填答案按钮</span>
+                  <span @click="answerDay(index)">填写答案按钮</span>
                 </Radio>
+                <div v-if="d.visibility">
+                  <p class="text-black">{{d.day_answer_name}} :</p>
+                  <Input class="m-r-20" v-model="d.answer" />
+                </div>
               </FormItem>
             </div>
-            {{ php.input1 }}
-            <Icon type="md-flash" @click="dayInputAdd" class="fs-25 cursor-pointer" />
+            <!-- {{ php.input1 }} -->
+            <Icon type="md-flash" @click="dayInputAdd()" class="fs-25 cursor-pointer" />
             <FormItem>
               <Button class="pull-left" @click="save('php')" type="info">保存</Button>
               <Button class="pull-left m-l-20" @click="daySubmit" type="success">提交</Button>
@@ -98,9 +79,26 @@
 export default {
   data() {
     return {
+      customDay: [],
+      answerDayFT: false,
       dayAddInputNumber: "2",
       submitTable: false,
-      dayContent: [],
+      dayContent: [
+        {
+          day_input_name: "题目",
+          day_answer_name: "答案",
+          input: "",
+          answer: "",
+          visibility: false
+        },
+        {
+          day_input_name: "题目",
+          day_answer_name: "答案",
+          input: "",
+          answer: "",
+          visibility: false
+        },
+      ],
       textName: "",
       userName: "石潇文",
       dateTime: "",
@@ -121,15 +119,33 @@ export default {
       }
     };
   },
+  created() {
+    this.dayContent.length = 2;
+  },
+  mounted() {},
   methods: {
-    dayAnswer() {
-      // alert(this.$refs.inout1.innerHTML.split("二"));
+    dayInputAdd() {
+      if (this.dayContent.length < 10) {
+        let obj = {
+          day_input_name: "题目",
+          day_answer_name: "答案",
+          input: "",
+          answer: "",
+          visibility: false
+        };
+        this.dayContent.push(obj);
+      } else {
+        return this.$Message.info("题目够了够了小哥哥");
+      }
     },
+    answerDay(index) {
+      this.dayContent[index].visibility = true;
+    },
+    dayAnswer() {},
     daySubmit() {
       this.textName = this.$refs.textName.value;
       this.modal7 = true;
       var aData = new Date();
-
       this.value =
         aData.getFullYear() +
         "年" +
@@ -143,11 +159,6 @@ export default {
         "分";
 
       this.dateTime = this.value;
-    },
-    dayInputAdd() {
-      this.dayContent.push({});
-      this.dayAddInputNumber++;
-      // alert(this.$refs.dayAddInputNumber.innerHTML)
     },
 
     dayok() {
