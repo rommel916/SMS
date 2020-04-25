@@ -9,22 +9,36 @@
         </Breadcrumb>
         <Card>
           <Form ref="php" :model="php" :rules="ruleValidate" label-position="top">
-            <FormItem prop="input1" label="题目">
-              <Input ref="dayInput" id="dayInput" v-model="php.input2" />
+            <FormItem class>
+              <input class ref="textName" id="dayInputOutline" placeholder="本次测验的题目" />
             </FormItem>
-            <FormItem prop="input1" label="题目">
-              <Input ref="dayInput" id="dayInput" v-model="php.input3" />
-            </FormItem>
-            <div v-for="(d,index) in dayContent" :key="index">
-              <FormItem prop="input1" label="题目">
-                <Input ref="dayInput" id="dayInput" />
+            <div ref="dayRef" v-for="(d,index) in dayContent" :key="index">
+              <p ref="dayAddInputNumber">{{d.day_input_name}}</p>
+              <!-- <p ref="dayAddInputNumber">{{d.day_input_name}}</p> -->
+              <FormItem prop="input1" label>
+                <Input
+                  v-model="d.input"
+                  style="width:70%"
+                  class="m-r-20"
+                  ref="dayInput"
+                  id="dayInput"
+                />
+                <!-- <Button @click="dayAnswer" type="info">{{dayButton}}</Button> -->
+                <Radio label="apple">
+                  <Icon type="social-apple"></Icon>
+                  <span @click="answerDay(index)">填写答案按钮</span>
+                </Radio>
+                <div v-if="d.visibility">
+                  <p class="text-black">{{d.day_answer_name}} :</p>
+                  <Input class="m-r-20" v-model="d.answer" />
+                </div>
               </FormItem>
             </div>
-            {{ php.input1 }}
-            <Icon type="md-flash" @click="dayInputAdd" class="fs-25 cursor-pointer" />
+            <!-- {{ php.input1 }} -->
+            <Icon type="md-flash" @click="dayInputAdd()" class="fs-25 cursor-pointer" />
             <FormItem>
               <Button class="pull-left" @click="save('php')" type="info">保存</Button>
-              <Button class="pull-left m-l-20" @click="webSubmit" type="success">提交</Button>
+              <Button class="pull-left m-l-20" @click="daySubmit" type="success">提交</Button>
               <Modal
                 @on-ok="dayok"
                 @on-cancel="dayCancel"
@@ -34,7 +48,7 @@
               >
                 <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
                   <div class="text-blue flex text-center">
-                    <div class="flex-1">测试的名字:{{ dayName }}</div>
+                    <div class="flex-1">测试的名字:{{ textName }}</div>
                     <div class="flex-1 b-h">发布试题人:{{ userName }}</div>
                     <div class="flex-1">{{dateTime}}</div>
                   </div>
@@ -52,10 +66,6 @@
                   <Checkbox label="赵苏"></Checkbox>
                   <Checkbox label="李章"></Checkbox>
                 </CheckboxGroup>
-                <!--    <div style="border-bottom: 1px solid #e9e9e9;padding-bottom:6px;margin-bottom:6px;">
-                <Button type="primary">取消</Button>
-                <Button type="primary">确认发布</Button>
-                </div>-->
               </Modal>
               <Button class="pull-left m-l-20" @click="cancel('php')" type="error">取消</Button>
             </FormItem>
@@ -69,8 +79,27 @@
 export default {
   data() {
     return {
-      dayContent: [],
-      dayName: "日测一",
+      customDay: [],
+      answerDayFT: false,
+      dayAddInputNumber: "2",
+      submitTable: false,
+      dayContent: [
+        {
+          day_input_name: "题目",
+          day_answer_name: "答案",
+          input: "",
+          answer: "",
+          visibility: false
+        },
+        {
+          day_input_name: "题目",
+          day_answer_name: "答案",
+          input: "",
+          answer: "",
+          visibility: false
+        },
+      ],
+      textName: "",
       userName: "石潇文",
       dateTime: "",
       modal7: false,
@@ -80,11 +109,6 @@ export default {
       user: [{ name: "张三" }, { name: "李四" }, { name: "张三" }],
       php: {
         input1: ""
-        /*   input2: "",
-        input3: "",
-        input4: "",
-        input5: "",
-        input6: "" */
       },
       ruleValidate: {
         input1: [
@@ -92,41 +116,65 @@ export default {
             trigger: "blur"
           }
         ]
-        /* input2: [
-          {
-            trigger: "blur"
-          }
-        ],
-        input3: [
-          {
-            trigger: "blur"
-          }
-        ],
-        input4: [
-          {
-            trigger: "blur"
-          }
-        ],
-        input5: [
-          {
-            trigger: "blur"
-          }
-        ],
-        input6: [
-          {
-            trigger: "blur"
-          } 
-        ]*/
       }
     };
   },
+  created() {
+    this.dayContent.length = 2;
+  },
+  mounted() {},
   methods: {
     dayInputAdd() {
-      // alert("addInputAdd")
-      this.dayContent.push({});
+      if (this.dayContent.length < 10) {
+        let obj = {
+          day_input_name: "题目",
+          day_answer_name: "答案",
+          input: "",
+          answer: "",
+          visibility: false
+        };
+        this.dayContent.push(obj);
+      } else {
+        return this.$Message.info("题目够了够了小哥哥");
+      }
     },
+    answerDay(index) {
+      this.dayContent[index].visibility = true;
+    },
+    dayAnswer() {},
+    daySubmit() {
+      this.textName = this.$refs.textName.value;
+      this.modal7 = true;
+      var aData = new Date();
+      this.value =
+        aData.getFullYear() +
+        "年" +
+        (aData.getMonth() + 1) +
+        "月" +
+        aData.getDate() +
+        "日" +
+        aData.getHours() +
+        "点" +
+        aData.getMinutes() +
+        "分";
+
+      this.dateTime = this.value;
+    },
+
     dayok() {
       this.$Message.info("提交成功");
+      this.submitTable = true;
+      // alert(this.submitTable);
+    },
+    beforeRouteEnter(to, from, next) {
+      console.log(to);
+      console.log(this.submitTable);
+    },
+    BeforeRouteUpdate(to, from, next) {
+      console.log(to);
+    },
+    BeforeRouteLeave(to, from, next) {
+      console.log(to);
     },
     dayCancel() {
       this.$Message.info("确认取消");
@@ -146,7 +194,8 @@ export default {
       }
     },
     checkAllGroupChange(data) {
-      if (data.length === 4) {
+      // alert(data)
+      if (data.length === this.user.length + 1) {
         this.indeterminate = false;
         this.checkAll = true;
       } else if (data.length > 0) {
@@ -156,22 +205,6 @@ export default {
         this.indeterminate = false;
         this.checkAll = false;
       }
-    },
-    webSubmit() {
-      this.modal7 = true
-      var aData = new Date();
-      this.value =
-        aData.getFullYear() +
-        "年" +
-        (aData.getMonth() + 1) +
-        "月" +
-        aData.getDate() +
-        "日" +
-        aData.getHours() +
-        "点" +
-        aData.getMinutes() +
-        "分";
-      this.dateTime = this.value;
     },
     save(name) {
       this.$refs[name].validate(valid => {
